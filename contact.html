@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Контакти | SANergy</title>
+    
+    <meta name="description" content="Зв'яжіться з нами для консультації або замовлення вітрової станції.">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__container">
+            
+            <a href="index.html" class="header__logo">
+                SANergy
+            </a>
+
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="index.html" class="header__nav-link">Головна</a></li>
+                    <li class="header__nav-item"><a href="index.html#problem" class="header__nav-link">Проблема</a></li>
+                    <li class="header__nav-item"><a href="index.html#solutions" class="header__nav-link">Рішення</a></li>
+                    <li class="header__nav-item"><a href="index.html#cases" class="header__nav-link">Кейси</a></li>
+                    <li class="header__nav-item"><a href="contact.html" class="header__nav-link active">Контакти</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a href="calculator.html" class="button button--primary">
+                    Розрахувати вартість
+                </a>
+                
+                <button class="header__menu-toggle" aria-label="Відкрити меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="content-section" id="contact-page">
+            <div class="container">
+                
+                <div class="section-header">
+                    <h1 class="section-title">Зв'яжіться з нами</h1>
+                    <p class="section-subtitle">
+                        Маєте питання? Залиште заявку, і наш інженер 
+                        проконсультує вас найближчим часом.
+                    </p>
+                </div>
+                
+                <div class="contact-grid">
+                    
+                    <div class="contact-details">
+                        <h3 class="contact-details__title">Наші контакти</h3>
+                        <p>
+                            Ми завжди на зв'язку, щоб допомогти вам 
+                            знайти найкраще рішення для вашої ферми.
+                        </p>
+                        <ul class="contact-details__list">
+                            <li>
+                                <strong>📞 Телефон:</strong>
+                                <a href="tel:+380001234567">+38 (000) 123-45-67</a>
+                            </li>
+                            <li>
+                                <strong>✉️ Email:</strong>
+                                <a href="mailto:info@sanergy.ua">info@sanergy.ua</a>
+                            </li>
+                            <li>
+                                <strong>📍 Адреса:</strong>
+                                <span>м. Київ, вул. Інженерна, 1</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <fieldset class="calc-fieldset">
+                            <legend>Форма заявки</legend>
+                            <div class="form-group">
+                                <label for="contactName">Ваше ім'я:</label>
+                                <input type="text" id="contactName" name="contactName" class="form-control" placeholder="Іван Петренко" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Ваш Email:</label>
+                                <input type="email" id="contactEmail" name="contactEmail" class="form-control" placeholder="example@gmail.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactSubject">Тема повідомлення:</label>
+                                <input type="text" id="contactSubject" name="contactSubject" class="form-control" placeholder="Консультація по вітряку 10 кВт">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage">Ваше питання:</label>
+                                <textarea id="contactMessage" name="contactMessage" class="form-control" rows="6" placeholder="Доброго дня, мене цікавить..." required></textarea>
+                            </div>
+                            <button type="submit" class="button button--primary button--large" style="width: 100%;">
+                                Надіслати повідомлення
+                            </button>
+                        </fieldset>
+                    </form>
+                    
+                </div>
+                
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+
+                <div class="footer__column">
+                    <h3 class="footer__heading">SANergy</h3>
+                    <p>
+                        Надійні вітрові рішення для енергетичної
+                        незалежності вашої ферми.
+                    </p>
+                    <ul class="footer__contact-list">
+                        <li><strong>Телефон:</strong> <a href="tel:+380001234567">+38 (000) 123-45-67</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:info@sanergy.ua">info@sanergy.ua</a></li>
+                        <li><strong>Адреса:</strong> м. Київ, вул. Інженерна, 1</li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h3 class="footer__heading">Навігація</h3>
+                    <ul class="footer__nav-list">
+                        <li><a href="index.html#problem">Проблема вентиляції</a></li>
+                        <li><a href="index.html#solutions">Наші рішення</a></li>
+                        <li><a href="index.html#cases">Виконані проєкти</a></li>
+                        <li><a href="calculator.html">Калькулятор</a></li>
+                        <li><a href="contact.html">Контакти</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h3 class="footer__heading">Ми в соцмережах</h3>
+                    <p>Слідкуйте за новинами та проєктами на GitHub (поки що).</p>
+                    <ul class="footer__social-list">
+                        <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="#" target="_blank">Telegram</a></li>
+                        <li><a href="#" target="_blank">YouTube</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2025 "SANergy". Всі права захищено. Сайт на <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
