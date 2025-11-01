@@ -301,103 +301,38 @@ img {
 }
 
 /* Використовуємо Grid для колонок */
+/* --- Надійний футер: гарантує 3 колонки на десктопі --- */
 .footer__grid {
-    display: grid;
-    /* * Це магія: створює колонки, які самі 
-     * адаптуються. На десктопі їх буде 3, 
-     * на мобілках - 1.
-     */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+  display: grid;
+  gap: var(--spacing-xl);
+  /* На десктопі — чітко 3 колонки (мінімум 0 щоб уникнути overflow) */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
 }
 
+/* Зменшуємо відступи у колонках (чистіший вигляд) */
 .footer__column {
-    padding-right: var(--spacing-lg); /* Щоб колонки не "злипались" */
+  padding-right: 0;
 }
 
-.footer__heading {
-    font-family: var(--font-family-headings);
-    color: var(--color-white);
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-lg);
-    position: relative;
-    padding-bottom: var(--spacing-sm);
+/* Якщо екран середній — робимо 2 колонки */
+@media (max-width: 1000px) {
+  .footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-/* Декоративне підкреслення для заголовків футера */
-.footer__heading::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 3px;
-    background-color: var(--color-accent); /* Наш зелений акцент */
+/* Мобільні — 1 колонка */
+@media (max-width: 640px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+  .footer {
+    padding: calc(var(--spacing-lg)) 0;
+  }
 }
 
-.footer p {
-    color: #ccc; /* Трохи світліший текст для описів */
-    margin-bottom: var(--spacing-md);
-}
-
-/* Списки контактів, навігації, соцмереж */
-.footer__contact-list,
-.footer__nav-list,
-.footer__social-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer__contact-list li,
-.footer__nav-list li,
-.footer__social-list li {
-    margin-bottom: var(--spacing-md);
-}
-
-.footer a {
-    color: var(--color-white);
-    text-decoration: none;
-    transition: color 0.3s ease, padding-left 0.3s ease;
-}
-
-/* Ефект для посилань в футері */
-.footer a:hover {
-    color: var(--color-accent); /* Стають зеленими при наведенні */
-    text-decoration: none;
-    padding-left: var(--spacing-sm); /* Легкий зсув */
-}
-
-.footer__contact-list a {
-    color: #eee; /* Контактні дані трохи яскравіші */
-}
-
-.footer__contact-list strong {
-    color: #aaa;
-}
-
-/* Нижня панель (Копірайт) */
-.footer__bottom {
-    text-align: center;
-    border-top: 1px solid #444; /* Лінія-розділювач */
-    padding-top: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
-}
-
-.footer__bottom p {
-    color: #aaa;
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-/* Посилання в копірайті (на GitHub Pages) */
-.footer__bottom a {
-    color: #ccc;
-    text-decoration: underline;
-}
-
-.footer__bottom a:hover {
-    color: var(--color-accent);
-    padding-left: 0; /* Не потрібен зсув */
+/* Безпека: якщо щось інше перезаписує стилі, даємо більш специфічний селектор */
+.container > .footer__grid {
+  /* no-op: тільки щоб підвищити специфічність у разі потреби */
 }
