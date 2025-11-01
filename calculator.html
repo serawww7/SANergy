@@ -51,7 +51,7 @@
         </div>
     </header>
 
-    <main>
+<main>
         
         <section class="content-section" id="calculator-form">
             <div class="container">
@@ -64,7 +64,87 @@
                     </p>
                 </div>
                 
-                </div>
+                <form class="calculator" id="calcForm">
+                    
+                    <div class="calculator__grid">
+                        
+                        <div class="calculator__column">
+                            
+                            <fieldset class="calc-fieldset">
+                                <legend>1. Параметри ферми</legend>
+                                <div class="form-group">
+                                    <label for="objectType">Тип тварин:</label>
+                                    <select id="objectType" name="objectType" class="form-control" required>
+                                        <option value="">Оберіть тип...</option>
+                                        <option value="poultry">Птиця</option>
+                                        <option value="pigs">Свині</option>
+                                        <option value="cows">Корови</option>
+                                        <option value="other">Інше</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="heads">Кількість голів:</label>
+                                    <input type="number" id="heads" name="heads" class="form-control" min="1" placeholder="напр. 1000" required>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset class="calc-fieldset">
+                                <legend>2. Навантаження (Вентиляція)</legend>
+                                <div class="form-group">
+                                    <label for="fanPower_W">Потужність одного вентилятора (Вт):</label>
+                                    <input type="number" id="fanPower_W" name="fanPower_W" class="form-control" min="0" placeholder="напр. 500">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fanCount">Кількість вентиляторів (шт):</label>
+                                    <input type="number" id="fanCount" name="fanCount" class="form-control" min="0" placeholder="напр. 4">
+                                </div>
+                                <div class="form-group">
+                                    <label for="otherLoad_W">Інші навантаження (освітлення, насоси, Вт):</label>
+                                    <input type="number" id="otherLoad_W" name="otherLoad_W" class="form-control" min="0" value="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hoursPerDay">Годин роботи на добу (год):</label>
+                                    <input type="number" id="hoursPerDay" name="hoursPerDay" class="form-control" min="1" max="24" placeholder="1 - 24" required>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset class="calc-fieldset">
+                                <legend>3. Параметри системи</legend>
+                                <div class="form-group">
+                                    <label for="autonomyDays">Бажаний час автономії (дні):</label>
+                                    <input type="number" id="autonomyDays" name="autonomyDays" class="form-control" min="0" value="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="capacityFactor">Коефіцієнт вітру (CF):</label>
+                                    <input type="number" id="capacityFactor" name="capacityFactor" class="form-control" min="0.05" max="0.5" step="0.01" value="0.25" required>
+                                </div>
+                                 <div class="form-group">
+                                    <label for="systemLossPercent">Втрати системи (%):</label>
+                                    <input type="number" id="systemLossPercent" name="systemLossPercent" class="form-control" min="0" max="50" value="20" required>
+                                </div>
+                            </fieldset>
+                            
+                        </div>
+                        
+                        <div class="calculator__column calculator__results-wrapper">
+                            <fieldset class="calc-fieldset calc-fieldset--results">
+                                <legend>Результат розрахунку</legend>
+                                
+                                <div class="calc-results" id="calcResults">
+                                    <p class="results-placeholder">Заповніть обов'язкові поля зліва, щоб побачити результат.</p>
+                                    
+                                    </div>
+                                
+                                <button type="submit" class="button button--primary button--large" style="width: 100%;">
+                                    Розрахувати
+                                </button>
+                            </fieldset>
+                        </div>
+                        
+                    </div>
+                </form>
+                
+            </div>
         </section>
         
     </main>
