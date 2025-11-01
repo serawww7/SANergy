@@ -859,3 +859,74 @@ img {
         font-size: 1.1rem;
     }
 }
+
+
+/* --- 19. КОМПОНЕНТИ: Секція "Call to Action" (CTA) --- */
+
+.cta-section {
+    background: var(--color-primary); /* Синій фон */
+    color: var(--color-white);
+    padding: var(--spacing-xxl) 0;
+    margin-top: var(--spacing-xxl);
+    /* * Можна додати легкий градієнт або патерн, 
+     * але поки що залишимо чистий колір.
+     */
+}
+
+/* Використовуємо flex для розташування тексту та кнопки */
+.cta-container {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє перенос на мобілках */
+    justify-content: space-between; /* Розносить по боках */
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.cta-content {
+    flex: 2 1 500px; /* Текст займає більше місця */
+}
+
+.cta-action {
+    flex: 1 1 200px; /* Кнопка займає менше місця */
+    text-align: center; /* Центруємо кнопку на мобілках */
+}
+
+.cta-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+.cta-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.85); /* Трохи прозорий білий */
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Робимо кнопку зеленою (акцентною) і великою */
+.cta-button {
+    font-size: 1.15rem;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    width: 100%;
+    max-width: 350px; /* Обмежуємо ширину кнопки */
+}
+
+/* --- 20. АДАПТИВНІСТЬ (CTA) --- */
+
+@media (max-width: var(--breakpoint-tablet)) {
+    .cta-container {
+        flex-direction: column; /* Все в один стовпчик */
+        text-align: center;
+    }
+
+    .cta-content {
+        flex-basis: 100%;
+    }
+
+    .cta-action {
+        flex-basis: 100%;
+        width: 100%;
+    }
+}
