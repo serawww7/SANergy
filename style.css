@@ -791,25 +791,35 @@ img {
     overflow: hidden; /* Щоб рамка гарно обрізала кути */
 }
 
-/* Заглушка для зображення */
-.case-study__image-placeholder {
+/* Стилі для реального зображення */
+.case-study__image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius); /* Застосовуємо скруглення */
+    object-fit: cover; /* Щоб зображення заповнювало простір, обрізаючи зайве */
+    min-height: 250px; /* Мінімальна висота для зображення */
+}
+
+/* Заглушка для зображення (її можна видалити після додавання реальних фото) */
+/* .case-study__image-placeholder {
     width: 100%;
     height: 100%;
-    min-height: 300px; /* Мінімальна висота */
+    min-height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #e9ecef; /* Світло-сірий фон */
+    background: #e9ecef;
     border-radius: var(--border-radius);
     font-family: var(--font-family-body);
     color: var(--color-text-secondary);
     text-align: center;
     padding: var(--spacing-md);
-}
+} */
 
 .case-study__content {
     padding: var(--spacing-lg) 0;
 }
+
 
 .case-study__title {
     font-size: 1.8rem;
