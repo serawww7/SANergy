@@ -1189,3 +1189,74 @@ img {
         grid-template-columns: 1fr; /* Одна колонка */
     }
 }
+
+
+
+/* --- 26. КОМПОНЕНТИ: Сторінка обладнання --- */
+
+.equipment-intro {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xxl);
+    background: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+}
+
+.equipment-intro h3 {
+    color: var(--color-primary-dark);
+    font-size: 1.4rem;
+}
+
+.equipment-intro p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Сітка для карток партнерів */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.partner-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Заглушка для логотипу */
+.partner-logo-placeholder {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e9ecef;
+    border-radius: var(--border-radius);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.partner-title {
+    font-size: 1.4rem;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.partner-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+    flex-grow: 1; /* Робить так, щоб картки були однієї висоти */
+}
