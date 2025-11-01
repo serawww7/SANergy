@@ -336,3 +336,122 @@ img {
 .container > .footer__grid {
   /* no-op: тільки щоб підвищити специфічність у разі потреби */
 }
+
+
+/* --- 8. КОМПОНЕНТИ: Hero Section --- */
+
+/* Ми вже задали базовий фон і колір у секції "3. ЛЕЙАУТ". */
+/* Тепер стилізуємо вміст. */
+
+.hero__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Розносить контент і картинку */
+    gap: var(--spacing-xl);
+    min-height: calc(70vh - 70px); /* Висота екрану мінус шапка */
+}
+
+.hero__content {
+    /* Дозволяємо контенту зайняти ~60% ширини */
+    flex: 0 1 650px; 
+}
+
+.hero__title {
+    font-size: 2.8rem; /* 44.8px - Дуже великий заголовок */
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Робимо підзаголовок (другий рядок) меншим */
+.hero__title span {
+    display: block;
+    font-size: 1.8rem; /* 28.8px */
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85); /* Трохи прозорий */
+    margin-top: var(--spacing-sm);
+}
+
+.hero__subtitle {
+    font-size: 1.15rem; /* 18.4px */
+    color: var(--color-background); /* Світло-сірий */
+    line-height: var(--line-height-base);
+    margin-bottom: var(--spacing-xl);
+    max-width: 550px; /* Обмежуємо ширину підзаголовка */
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє кнопкам переноситись на моб. */
+    gap: var(--spacing-md); /* Відстань між кнопками */
+}
+
+/* Додаткові стилі для кнопок в Hero */
+.button--large {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1.1rem;
+}
+
+/* "Другорядна" кнопка (прозора з рамкою) */
+.button--secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button--secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    transform: translateY(0); /* Вимикаємо ефект підйому */
+    box-shadow: none;
+}
+
+/* --- 9. АДАПТИВНІСТЬ (Hero) --- */
+
+/* Планшет (1024px і менше) */
+@media (max-width: var(--breakpoint-tablet)) {
+    .hero__container {
+        min-height: auto; /* Забираємо фіксовану висоту */
+        padding-top: var(--spacing-xl);
+        padding-bottom: var(--spacing-xl);
+        text-align: center; /* Центруємо весь текст */
+    }
+    
+    .hero__content {
+        flex-basis: 100%; /* Контент займає всю ширину */
+    }
+
+    .hero__subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero__actions {
+        justify-content: center; /* Центруємо кнопки */
+    }
+
+    /* .hero__image { display: none; } */ /* Картинку можна сховати */
+}
+
+/* Мобільний (640px і менше) */
+@media (max-width: var(--breakpoint-mobile)) {
+    .hero__title {
+        font-size: 2.2rem; /* 35.2px */
+    }
+    
+    .hero__title span {
+        font-size: 1.5rem; /* 24px */
+    }
+
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+
+    /* Робимо кнопки на всю ширину на мобілках */
+    .hero__actions .button {
+        width: 100%;
+    }
+}
