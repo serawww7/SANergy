@@ -643,3 +643,132 @@ img {
     line-height: 1.7;
     margin-bottom: 0;
 }
+
+
+
+/* --- 15. КОМПОНЕНТИ: Секція "Як це працює" --- */
+
+/* Контейнер для блоків схеми */
+.flow-diagram {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Робить картки однакової висоти */
+    flex-wrap: wrap; /* Дозволяє перенос на мобілках */
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xxl);
+}
+
+/* Окремий крок-блок */
+.flow-step {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    text-align: center;
+    /* * Кожен блок займає ~30%
+     * flex-basis: 300px; змушує його бути 
+     * мінімум 300px перед тим як стискатись
+     */
+    flex: 1 1 300px; 
+    max-width: 350px;
+    display: flex;
+    flex-direction: column; /* Розташовує контент всередині картки */
+}
+
+.flow-step__icon {
+    font-size: 3rem; /* 48px */
+    line-height: 1;
+    margin-bottom: var(--spacing-md);
+}
+
+.flow-step__title {
+    font-size: 1.4rem; /* 22.4px */
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.flow-step p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+    margin-top: auto; /* Притискає текст до низу, якщо картки різної висоти */
+}
+
+/* Центральний, найважливіший блок */
+.flow-step--central {
+    border-color: var(--color-accent);
+    border-width: 2px;
+    transform: scale(1.05); /* Трохи більший */
+    box-shadow: var(--box-shadow);
+    z-index: 2; /* Вище за інші блоки */
+}
+
+.flow-step--central .flow-step__title {
+    color: var(--color-accent); /* Робимо заголовок зеленим */
+}
+
+/* Стрілка-розділювач */
+.flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 50px; /* Не росте, не стискається, ширина 50px */
+}
+
+.flow-arrow span {
+    font-size: 3rem; /* 48px */
+    color: var(--color-primary);
+    opacity: 0.5;
+}
+
+/* Текст-пояснення під схемою */
+.flow-summary {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fdfdfd;
+    border: 1px solid var(--color-border);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+}
+
+.flow-summary h4 {
+    font-size: 1.3rem;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.flow-summary p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* --- 16. АДАПТИВНІСТЬ (Схема) --- */
+
+/* * На екранах менше 900px, 
+ * стрілки зникають і все стає вертикальним 
+ */
+@media (max-width: 900px) {
+    .flow-diagram {
+        flex-direction: column; /* Вертикальний потік */
+        align-items: center; /* Центруємо картки */
+    }
+
+    .flow-step {
+        max-width: 500px; /* Дозволяємо карткам бути ширшими */
+        width: 100%;
+        flex-basis: auto; /* Скидаємо flex-basis */
+    }
+
+    .flow-step--central {
+        transform: scale(1); /* Вимикаємо збільшення */
+    }
+
+    .flow-arrow {
+        flex-basis: 30px; /* Зменшуємо висоту */
+        transform: rotate(90deg); /* Повертаємо стрілку */
+    }
+}
