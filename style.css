@@ -930,3 +930,110 @@ img {
         width: 100%;
     }
 }
+
+
+/* --- 21. КОМПОНЕНТИ: Форма Калькулятора --- */
+
+/* Сітка з 2-х колонок (форма + результати) */
+.calculator__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Форма займає 2/3, результати 1/3 */
+    gap: var(--spacing-xxl);
+}
+
+.calculator__column {
+    /* порожньо */
+}
+
+/* Обгортка для блоку результатів */
+.calculator__results-wrapper {
+    position: sticky; /* Робить блок "прилипаючим" */
+    top: 100px; /* 70px (шапка) + 30px (відступ) */
+    align-self: start; /* Вирівнює по верху */
+}
+
+/* Групи полів (Fieldset) */
+.calc-fieldset {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    background: var(--color-white);
+}
+
+.calc-fieldset legend {
+    font-family: var(--font-family-headings);
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    padding: 0 var(--spacing-sm);
+    margin-left: var(--spacing-md);
+}
+
+/* Стилізація полів вводу */
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.95rem;
+}
+
+/* Стиль для <input> та <select> */
+.form-control {
+    width: 100%;
+    padding: var(--spacing-md);
+    font-size: 1rem;
+    font-family: var(--font-family-body);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    background: #fdfdfd;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px rgba(0, 90, 156, 0.3);
+}
+
+/* Блок результатів */
+.calc-fieldset--results {
+    border-color: var(--color-primary);
+    border-width: 2px;
+}
+
+.calc-results {
+    min-height: 200px; /* Мінімальна висота, щоб блок не "стрибав" */
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-sm);
+}
+
+.results-placeholder {
+    color: var(--color-text-secondary);
+    font-style: italic;
+    line-height: 1.7;
+    text-align: center;
+    padding-top: var(--spacing-xl);
+}
+
+/* --- 22. АДАПТИВНІСТЬ (Калькулятор) --- */
+
+@media (max-width: var(--breakpoint-tablet)) {
+    .calculator__grid {
+        grid-template-columns: 1fr; /* Одна колонка */
+    }
+    
+    .calculator__results-wrapper {
+        position: static; /* Вимикаємо "прилипання" */
+        top: auto;
+    }
+}
