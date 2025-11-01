@@ -1037,3 +1037,74 @@ img {
         top: auto;
     }
 }
+/* --- 23. АДАПТИВНІСТЬ: Мобільне меню --- */
+
+@media (max-width: var(--breakpoint-tablet)) {
+    
+    /* 1. Стилізуємо навігацію, коли вона СХОВАНА */
+    .header__nav {
+        /*
+         * Ми вже маємо display: none; з попередніх правил.
+         * Тепер ми його перевизначимо для JS-анімації.
+         */
+        display: block; /* Завжди block, але... */
+        position: fixed; /* ...позиціонуємо над усім */
+        top: 70px; /* Починається одразу під шапкою (висота .header__container) */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px); /* На всю висоту екрану мінус шапка */
+        background: var(--color-white);
+        
+        /* Ховаємо за межами екрану */
+        transform: translateX(-100%); 
+        
+        transition: transform 0.4s ease-in-out;
+        z-index: 200; /* Має бути вище за все, крім шапки */
+        
+        /* Налаштовуємо список всередині */
+        padding: var(--spacing-xl);
+    }
+    
+    /* 2. Стилізуємо навігацію, коли вона АКТИВНА (має клас .is-active) */
+    .header__nav.is-active {
+        /* Повертаємо на екран */
+        transform: translateX(0);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* 3. Перетворюємо список на вертикальний */
+    .header__nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+    
+    .header__nav-link {
+        font-size: 1.5rem; /* Робимо посилання великими */
+        color: var(--color-primary-dark);
+        padding: var(--spacing-md);
+        border-bottom: none; /* Прибираємо підкреслення */
+    }
+    .header__nav-link::after {
+        display: none; /* Прибираємо анімацію підкреслення */
+    }
+
+    /* 4. Анімація "бургера" в "X" (коли кнопка має .is-active) */
+    .header__menu-toggle.is-active span:nth-child(1) {
+        /* Повертаємо верхню лінію */
+        transform: translateY(8px) rotate(45deg);
+    }
+    .header__menu-toggle.is-active span:nth-child(2) {
+        /* Ховаємо середню */
+        opacity: 0;
+    }
+    .header__menu-toggle.is-active span:nth-child(3) {
+        /* Повертаємо нижню лінію */
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* 5. Блокуємо скрол, коли меню відкрите */
+    body.no-scroll {
+        overflow: hidden;
+    }
+}
