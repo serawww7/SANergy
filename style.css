@@ -259,7 +259,7 @@ img {
 /* --- 6. АДАПТИВНІСТЬ (Брейкпоінти) --- */
 
 /* Планшет (1024px і менше) */
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 1024px) {
     .header__nav {
         /*
          * Ховаємо десктопну навігацію.
@@ -280,7 +280,7 @@ img {
 }
 
 /* Мобільний (640px і менше) */
-@media (max-width: var(--breakpoint-mobile)) {
+@media (max-width: 640px) {
     /* Ховаємо CTA-кнопку на найменших екранах */
     .header__actions .button--primary {
         display: none;
@@ -412,7 +412,7 @@ img {
 /* --- 9. АДАПТИВНІСТЬ (Hero) --- */
 
 /* Планшет (1024px і менше) */
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 1024px) {
     .hero__container {
         min-height: auto; /* Забираємо фіксовану висоту */
         padding-top: var(--spacing-xl);
@@ -437,7 +437,7 @@ img {
 }
 
 /* Мобільний (640px і менше) */
-@media (max-width: var(--breakpoint-mobile)) {
+@media (max-width: 640px) {
     .hero__title {
         font-size: 2.2rem; /* 35.2px */
     }
@@ -564,7 +564,7 @@ img {
 
 /* --- 12. АДАПТИВНІСТЬ (Проблема) --- */
 
-@media (max-width: var(--breakpoint-mobile)) {
+@media (max-width: 640px) {
     .section-title {
         font-size: 1.8rem; /* 28.8px */
     }
@@ -843,14 +843,14 @@ img {
 
 /* --- 18. АДАПТИВНІСТЬ (Кейси) --- */
 
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 1024px) {
     .case-study {
         grid-template-columns: 1fr; /* Одна колонка */
         gap: var(--spacing-xl);
     }
 }
 
-@media (max-width: var(--breakpoint-mobile)) {
+@media (max-width: 640px) {
     .case-study__title {
         font-size: 1.5rem;
     }
@@ -915,7 +915,7 @@ img {
 
 /* --- 20. АДАПТИВНІСТЬ (CTA) --- */
 
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 1024px) {
     .cta-container {
         flex-direction: column; /* Все в один стовпчик */
         text-align: center;
@@ -1027,7 +1027,7 @@ img {
 
 /* --- 22. АДАПТИВНІСТЬ (Калькулятор) --- */
 
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 1024px) {
     .calculator__grid {
         grid-template-columns: 1fr; /* Одна колонка */
     }
@@ -1039,7 +1039,7 @@ img {
 }
 /* --- 23. АДАПТИВНІСТЬ: Мобільне меню --- */
 
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 1024px) {
     
     /* 1. Стилізуємо навігацію, коли вона СХОВАНА */
     .header__nav {
@@ -1174,7 +1174,7 @@ img {
 
 /* --- 25. АДАПТИВНІСТЬ (Контакти) --- */
 
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 1024px) {
     .contact-grid {
         grid-template-columns: 1fr; /* Одна колонка */
     }
