@@ -455,3 +455,130 @@ img {
         width: 100%;
     }
 }
+
+
+/* --- 10. СТИЛІ СЕКЦІЙ: Загальні --- */
+
+/* Загальний стиль для заголовків секцій (як-от "Чому це катастрофа?") */
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xxl); /* Відступ знизу */
+}
+
+.section-title {
+    font-size: 2.2rem; /* 35.2px */
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.section-subtitle {
+    font-size: 1.15rem; /* 18.4px */
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+/* --- 11. КОМПОНЕНТИ: Секція "Проблема" --- */
+
+/* Використовуємо Grid для двох карток */
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xxl);
+}
+
+/* Стиль для білих карток */
+.problem-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xl);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.problem-card:hover {
+    transform: translateY(-5px); /* Ефект "підйому" */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.problem-card__title {
+    font-size: 1.5rem; /* 24px */
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--color-accent); /* Зелене підкреслення */
+    padding-bottom: var(--spacing-sm);
+}
+
+.problem-card p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.problem-card__list {
+    list-style-type: none; /* Прибираємо стандартні маркери */
+    padding-left: 0;
+}
+
+.problem-card__list li {
+    position: relative;
+    padding-left: 30px; /* Відступ для кастомного маркера */
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+}
+
+/* "Галочка" (або "хрестик") перед пунктами списку */
+.problem-card__list li::before {
+    content: '⚠️'; /* Маркер небезпеки */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Стиль для блоку-висновку про дизель */
+.problem-summary {
+    background: var(--color-white);
+    border: 2px solid var(--color-accent); /* Яскрава зелена рамка */
+    border-left-width: 8px; /* Товста ліва рамка */
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    max-width: 900px;
+    margin: 0 auto; /* Центруємо */
+}
+
+.problem-summary h3 {
+    color: var(--color-primary-dark);
+    font-size: 1.4rem;
+}
+
+.problem-summary p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+}
+
+
+/* --- 12. АДАПТИВНІСТЬ (Проблема) --- */
+
+@media (max-width: var(--breakpoint-mobile)) {
+    .section-title {
+        font-size: 1.8rem; /* 28.8px */
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Зменшуємо відступи на мобілках */
+    .section-header {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .problem-grid {
+        margin-bottom: var(--spacing-xl);
+    }
+}
