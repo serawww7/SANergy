@@ -251,3 +251,140 @@ img {
         display: none;
     }
 }
+
+
+/* --- 5. КОМПОНЕНТИ: Header (доповнення) --- */
+
+.header__container {
+    display: flex;
+    justify-content: space-between; /* Розносить лого і екшени по боках */
+    align-items: center;
+    min-height: 70px; /* Трохи збільшимо висоту */
+}
+
+.header__logo {
+    font-family: var(--font-family-headings);
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    flex-shrink: 0; /* Не дає логотипу стискатися */
+}
+
+.header__logo:hover {
+    text-decoration: none;
+    color: var(--color-primary-dark);
+}
+
+/* * СТИЛІ ДЛЯ НАВІГАЦІЇ (Десктоп) 
+ * Ось цього блоку не вистачало 
+ */
+.header__nav {
+    /* Займає центральну частину */
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Центруємо по горизонталі */
+}
+
+.header__nav-list {
+    display: flex; /* Горизонтальне меню */
+    list-style: none;
+    gap: var(--spacing-lg); /* Відстань між пунктами */
+}
+
+.header__nav-link {
+    font-family: var(--font-family-headings);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: var(--spacing-sm) 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Ефект підкреслення при наведенні */
+.header__nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    transform: scaleX(0); /* Початково сховано */
+    transition: transform 0.3s ease;
+}
+
+.header__nav-link:hover,
+.header__nav-link.active { /* Стиль для активної сторінки */
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.header__nav-link:hover::after,
+.header__nav-link.active::after {
+    transform: scaleX(1); /* Показуємо підкреслення */
+}
+
+/* Блок з кнопкою CTA та "бургером" */
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-shrink: 0; /* Не дає кнопкам стискатися */
+}
+
+/* "Бургер" меню */
+.header__menu-toggle {
+    display: none; /* Схований на десктопі */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    width: 40px;
+    height: 40px;
+}
+
+.header__menu-toggle span {
+    display: block;
+    width: 28px; /* Трохи коротші лінії */
+    height: 3px;
+    background-color: var(--color-primary);
+    margin: 5px auto; /* Центруємо лінії */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* --- 6. АДАПТИВНІСТЬ (Брейкпоінти) --- */
+
+/* Планшет (1024px і менше) */
+@media (max-width: var(--breakpoint-tablet)) {
+    .header__nav {
+        /* * Ховаємо десктопну навігацію.
+         * Пізніше ми додамо JS, щоб вона з'являлася 
+         * як мобільне меню при кліку на "бургер"
+         */
+        display: none; 
+    }
+
+    .header__menu-toggle {
+        display: block; /* Показуємо "бургер" */
+    }
+
+    .header__container {
+        /* На планшеті лого зліва, бургер і CTA - справа */
+        justify-content: space-between;
+    }
+}
+
+/* Мобільний (640px і менше) */
+@media (max-width: var(--breakpoint-mobile)) {
+    /* Ховаємо CTA-кнопку на найменших екранах */
+    .header__actions .button--primary {
+        display: none;
+    }
+
+    .header__logo {
+        font-size: 1.25rem; /* Зменшуємо лого */
+    }
+}
